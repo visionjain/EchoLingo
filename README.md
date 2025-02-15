@@ -19,7 +19,7 @@ EchoLingo is a powerful live audio language translator supporting over 60 langua
 
 1. **Clone the repository**
    ```sh
-   git clone [https://github.com/yourusername/EchoLingo.git](https://github.com/visionjain/EchoLingo)
+   git clone https://github.com/visionjain/EchoLingo
    cd EchoLingo
    ```
 

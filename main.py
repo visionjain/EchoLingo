@@ -34,23 +34,11 @@ def process_translation(status_holder, result_holder, source_lang, target_lang):
             status_holder.text("Listening...")
             recognizer.pause_threshold = 1
             audio_input = recognizer.listen(source, phrase_time_limit=10)
-        
-
-        
         try:
             status_holder.text("Processing...")
             recognized_text = recognizer.recognize_google(audio_input, language=source_lang)
-            
             status_holder.text("Translating...")
             translated_result = perform_translation(recognized_text, source_lang, target_lang)
-
-
-
-
-
-
-
-
             convert_text_to_speech(translated_result.text, target_lang)
             conversation_log.append((recognized_text, translated_result.text))
             result_holder.text("\n".join([f"Spoken: {orig}\nTranslated: {trans}" for orig, trans in conversation_log]))
